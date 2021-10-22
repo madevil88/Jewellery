@@ -1,0 +1,200 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 92px;
+  margin-left: calc(50% - 12px - 34vw);
+  margin-right: calc(50% - 29px - 34vw);
+}
+
+.faq h2 {
+  font-family: "Cormorant Garamond", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44px;
+  letter-spacing: 1px;
+}
+
+.faq__list {
+  @include reset-list-style;
+  margin-top: 21px;
+  width: 100%;
+}
+
+.faq__list-item {
+  position: relative;
+  margin-top: -1px;
+  padding-top: 25px;
+  padding-left: 43px;
+  padding-right: 400px;
+  padding-bottom: 35px;
+  border: 1px solid $color-braun;
+}
+
+.faq__list-item span {
+  margin-right: 3px;
+}
+
+.faq__list-item h3 {
+  margin-bottom: 9px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.faq__list-item p {
+  display: none;
+  margin-top: 0;
+  margin-left: 6px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.faq__list-item--nojs p {
+  display: block;
+}
+
+.faq__list-item button {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0;
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &::before {
+    @include pseudo-clases;
+    width: 17px;
+    height: 20px;
+    top: 44px;
+    right: 48px;
+    background-image: url("../img/icon-accordion-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    transform: rotate(180deg);
+  }
+}
+
+.faq__list-item--nojs button {
+  display: none;
+}
+
+.faq__list-item--open p {
+  display: block;
+}
+
+.faq__list-item--open button::before {
+  transform: rotate(360deg);
+}
+/*стили для FireFox*/
+@supports (-moz-appearance:meterbar) {
+  .faq {
+    margin-left: calc(50% - 19px - 34vw);
+    margin-right: calc(50% - 34px - 34vw);
+  }
+}
+/*конец стилей для FireFox*/
+
+@media (max-width: $tablet-max-width) {
+  .faq {
+    margin-top: 42px;
+    margin-left: calc(50% - 9px - 43vw);
+    margin-right: calc(50% - 9px - 43vw);
+  }
+
+  .faq__list-item {
+    padding-left: 49px;
+    padding-right: 75px;
+    padding-bottom: 28px;
+  }
+
+  .faq__list-item span {
+    margin-right: 0;
+  }
+
+  .faq__list-item h3 {
+    margin-bottom: 16px;
+  }
+
+  .faq__list-item p {
+    margin-top: 26px;
+    margin-left: 0;
+    margin-bottom: 16px;
+  }
+
+  .faq__list-item button::before {
+    width: 25px;
+    height: 34px;
+    top: 38px;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .faq {
+    margin-top: 32px;
+    margin-left: calc(50% - 7px - 43vw);
+    margin-right: calc(50% - 7px - 43vw);
+  }
+
+  .faq h2 {
+    text-align: center;
+  }
+
+  .faq__list {
+    margin-top: 1px;
+  }
+
+  .faq__list-item {
+    padding-top: 0;
+    padding-left: 24px;
+    padding-right: 55px;
+    padding-bottom: 7px;
+  }
+
+  .faq__list-item span {
+    margin-right: 10px;
+  }
+
+  .faq__list-item h3 {
+    margin-top: 20px;
+    margin-right: 26px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .faq__list-item:first-child h3 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .faq__list-item:nth-child(4n + 2) h3 {
+    margin-right: 55px;
+  }
+
+  .faq__list-item:last-child h3 {
+    margin-right: 0;
+  }
+
+  .faq__list-item p {
+    margin-top: 14px;
+    margin-bottom: 11px;
+    margin-right: 5px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .faq__list-item button::before {
+    top: 13px;
+    right: 22px;
+  }
+}

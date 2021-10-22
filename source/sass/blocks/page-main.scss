@@ -1,0 +1,50 @@
+.page-main--catalog {
+  display: grid;
+  grid-template-columns: 21.37% 74.33%;
+  grid-column-gap: 4.3%;
+  margin-top: 79px;
+  margin-left: calc(50% - 3px - 42vw);
+  margin-right: calc(50% - 21px - 42vw);
+  margin-bottom: 72px;
+}
+
+.page-main__logo {
+  width: 100%;
+  height: 100%;
+  margin-left: 47.5vw;
+}
+
+.page-main__logo img {
+  margin-top: 11px;
+}
+/*стили для FireFox*/
+@supports (-moz-appearance:meterbar) {
+  .page-main--catalog {
+    margin-left: calc(50% - 10px - 42vw);
+    margin-right: calc(50% - 26px - 42vw);
+  }
+}
+/*конец стилей для FireFox*/
+
+@media (max-width: $tablet-max-width) {
+  .page-main--catalog {
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+    margin-left: calc(50% - 16px - 42vw);
+    margin-right: calc(50% - 16px - 42vw);
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .page-main--catalog {
+    margin-top: 40px;
+    margin-left: calc(50% - 11px - 42vw);
+    margin-right: calc(50% - 11px - 42vw);
+    margin-bottom: 62px;
+  }
+
+  .page-main__logo img {
+    margin-top: 5px;
+    width: 38px;
+  }
+}

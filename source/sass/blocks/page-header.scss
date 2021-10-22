@@ -1,0 +1,447 @@
+.page-header__wrapper {
+  display: flex;
+  justify-content: center;
+  padding-left: calc(50% - 4px - 42vw);
+  padding-right: calc(50% - 19px - 42vw);
+  padding-top: 30px;
+}
+
+.page-header__site-search input {
+  padding-top: 15px;
+  padding-left: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.8px;
+  color: $color-grey;
+  background-color: transparent;
+  border: none;
+}
+
+.page-header__logo {
+  display: flex;
+  margin-left: calc(50% - 234px);
+  margin-right: auto;
+}
+
+.page-header--menu-style {
+  background-color: $color-braun;
+}
+
+.page-header--menu-style svg {
+  max-width: 66px;
+  height: 66px;
+  stroke: $color-white;
+  stroke-width: 1px;
+}
+
+.page-header__login {
+  @include reset-list-style;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-header__login li {
+  margin-top: 9px;
+  margin-left: 35px;
+}
+
+.page-header__login a {
+  @include reset-link-style;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.4px;
+  color: $color-dark-grey;
+}
+
+.page-header__login svg {
+  display: none;
+}
+
+.page-header__main-nav {
+  margin-top: 20px;
+  padding-left: 27px;
+}
+
+.page-header__site-menu {
+  @include reset-list-style;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.page-header__site-menu li {
+  padding: 18px;
+}
+
+.page-header__site-menu-item-tablet,
+.page-header__site-menu-item-tablet-login {
+  display: none;
+}
+
+.page-header__site-menu a {
+  @include reset-link-style;
+}
+
+.page-header__main-nav-toggle {
+  display: none;
+}
+
+.page-header__slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 463px;
+  padding-top: 181px;
+  font-family: "Cormorant Garamond", "Arial", sans-serif;
+  color: $color-white;
+  box-shadow: inset 0 0 0 240px rgba(86, 64, 52, 0.7);
+  background-color: $color-braun;
+  background-image: url("../img/main-necklace-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: calc(50% + 8px) 50%;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/main-necklace-desktop@2x.jpg");
+  }
+}
+
+.page-header__slogan span {
+  margin-left: 17px;
+}
+
+.page-header__slogan span:nth-child(2n-1) {
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 57px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.page-header__slogan span:nth-child(2n) {
+  font-style: italic;
+  font-size: 38px;
+  line-height: 38px;
+}
+
+.page-header__slogan--catalog {
+  min-height: 261px;
+  padding-top: 89px;
+  background-image: url("../img/catalog-main-earrings-desktop@1x.jpg");
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/catalog-main-earrings-desktop@2x.jpg");
+  }
+}
+
+.page-header__slogan--catalog span:nth-child(2n-1) {
+  font-size: 32px;
+  line-height: 46px;
+}
+
+.page-header__slogan--catalog span:nth-child(2n) {
+  margin-left: 20px;
+  font-size: 22px;
+  line-height: 31px;
+  letter-spacing: 0.05px;
+}
+/*стили для FireFox*/
+@supports (-moz-appearance:meterbar) {
+  .page-header__wrapper {
+    padding-left: calc(50% - 11px - 42vw);
+    padding-right: calc(50% - 25px - 42vw);
+  }
+
+  .page-header__logo {
+    margin-left: calc(50% - 262px);
+  }
+}
+/*конец стилей для FireFox*/
+
+@media (max-width: $tablet-max-width) {
+  .page-header__wrapper {
+    padding-left: calc(50% - 4px - 42vw);
+    padding-right: calc(50% - 19px - 42vw);
+  }
+
+  .page-header__site-search {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    min-height: 70px;
+    top: 105px;
+    left: 0;
+    background-color: $color-braun;
+    z-index: 3;
+  }
+
+  .page-header__site-search input {
+    width: 100%;
+    margin-right: 45px;
+    margin-top: 32px;
+    margin-bottom: 30px;
+    margin-left: 47px;
+    padding-top: 10px;
+    padding-bottom: 14px;
+    padding-left: 37px;
+    color: $color-white;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 21px;
+  }
+
+  .page-header__site-search input::placeholder {
+    font-size: 0;
+  }
+
+  .page-header__site-search svg {
+    position: absolute;
+    top: 44px;
+    left: 57px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .page-header__site-search path {
+    stroke: $color-white;
+  }
+
+  .page-header__site-search--closed.page-header__site-search {
+    display: none;
+  }
+
+  .page-header__logo {
+    margin-left: calc(50% - 41px);
+  }
+
+  .page-header__login svg {
+    display: block;
+    margin-top: 15px;
+    margin-right: 2px;
+    width: 20px;
+    height: 18px;
+  }
+
+  .page-header__login span {
+    display: none;
+  }
+
+  .page-header__login--menu-style path {
+    stroke: $color-white;
+  }
+
+  .page-header__main-nav {
+    position: relative;
+    margin-top: 0;
+  }
+
+  .page-header__site-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 100vw;
+    height: 84vh;
+    margin-top: 75px;
+    top: 49px;
+    left: 0;
+    padding: 0;
+    padding-top: 88px;
+    padding-left: 35px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $color-white;
+    background-color: $color-braun;
+    overflow-y: scroll;
+    z-index: 2;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  }
+
+  .page-header__site-menu-item-tablet,
+  .page-header__site-menu-item-tablet-login {
+    display: block;
+    font-size: 18px;
+    line-height: 23px;
+    opacity: 0.75;
+  }
+
+  .page-header__site-menu-item-tablet:nth-child(4n + 2) {
+    margin-top: 18px;
+  }
+
+  .page-header__site-menu-item-tablet-login {
+    margin-top: 22px;
+    opacity: 1;
+  }
+
+  .page-header__site-menu li {
+    padding: 10.5px;
+  }
+
+  .page-header__main-nav--closed .page-header__site-menu {
+    display: none;
+  }
+
+  .page-header__main-nav-toggle {
+    display: flex;
+    position: absolute;
+    width: 25px;
+    height: 18px;
+    top: -42px;
+    left: calc(50% - 16px - 42vw);
+    padding: 0;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+  }
+
+  .page-header__main-nav-toggle svg {
+    width: 25px;
+    height: 18px;
+  }
+
+  .page-header__main-nav-toggle path {
+    stroke: $color-white;
+  }
+
+  .page-header__main-nav--closed path {
+    stroke: $color-black;
+  }
+
+  .page-header__slogan {
+    margin-top: 30px;
+    background-image: url("../img/main-necklace-tablet@1x.jpg");
+    background-position: 50% 50%;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/main-necklace-tablet@2x.jpg");
+    }
+  }
+
+  .page-header__slogan span {
+    margin-left: -17px;
+  }
+
+  .page-header__slogan--catalog {
+    background-image: url("../img/catalog-main-earrings-tablet@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/catalog-main-earrings-tablet@2x.jpg");
+    }
+  }
+
+  .page-header__slogan--catalog span {
+    margin-left: 0;
+  }
+
+  .page-header__slogan--catalog span:nth-child(2n) {
+    margin-left: 0;
+    line-height: 34px;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .page-header__wrapper {
+    padding-top: 13px;
+    padding-left: calc(50% - 37vw);
+    padding-right: calc(50% - 30px - 37vw);
+  }
+
+  .page-header__logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .page-header__login {
+    &::before {
+      top: 16px;
+    }
+  }
+
+  .page-header__site-search {
+    top: 75px;
+  }
+
+  .page-header__site-search svg {
+    top: 39px;
+    left: 28px;
+  }
+
+  .page-header__site-search input {
+    margin-top: 28px;
+    margin-right: 15px;
+    margin-bottom: 28px;
+    margin-left: 15px;
+  }
+
+  .page-header__main-nav-toggle {
+    top: -28px;
+    left: calc(50% - 18px - 40vw);
+  }
+
+  .page-header__site-menu {
+    height: 88.5vh;
+    margin-top: 30px;
+    padding-left: 5px;
+  }
+
+  .page-header__site-menu-item-tablet:nth-child(4n+2) {
+    margin-top: 9px;
+  }
+
+  .page-header__site-menu-item-tablet-login {
+    margin-top: 11px;
+  }
+
+
+  .page-header__slogan {
+    margin-top: 27px;
+    padding-top: 191px;
+    background-image: url("../img/main-necklace-mobile@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/main-necklace-mobile@2x.jpg");
+    }
+  }
+
+  .page-header__slogan span {
+    margin-left: 0;
+  }
+
+  .page-header__slogan span:nth-child(2n-1) {
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+  .page-header__slogan span:nth-child(2n) {
+    font-size: 34px;
+    line-height: 34px;
+  }
+
+  .page-header__slogan--catalog {
+    padding-top: 79px;
+    background-image: url("../img/catalog-main-earrings-mobile@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/catalog-main-earrings-mobile@2x.jpg");
+    }
+  }
+
+  .page-header__slogan--catalog span:nth-child(2n-1) {
+    font-size: 34px;
+    line-height: 46px;
+    letter-spacing: 0.05px;
+  }
+
+  .page-header__slogan--catalog span:nth-child(2n) {
+    margin-left: calc(50% - 148px);
+    margin-right: calc(50% - 148px);
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+  }
+}

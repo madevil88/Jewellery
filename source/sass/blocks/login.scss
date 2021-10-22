@@ -1,0 +1,257 @@
+.login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 31.4vw;
+  margin-top: 16px;
+  margin-left: 34.3vw;
+  padding-bottom: 54px;
+  background-color: $background-grey-color;
+  box-shadow: 0 5px 32px rgba(226, 221, 215, 0.24);
+  z-index: 2;
+}
+
+.login--popup {
+  position: fixed;
+  display: none;
+  margin-top: 0;
+  margin-left: 0;
+  width: 31.4vw;
+  height: 74.5vh;
+  top: 100px;
+  left: 34.3vw;
+  overflow-y: scroll;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.login--popup.login--opened {
+  display: flex;
+}
+
+.login--popup.login--opened::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.login h2 {
+  margin-top: 188px;
+  margin-bottom: 0;
+  font-family: "Cormorant Garamond", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44px;
+}
+
+.login__background-image {
+  position: absolute;
+  width: 100%;
+  height: 137px;
+  background-image: url("../img/sweet-ice-cream-photography@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/sweet-ice-cream-photography@2x.jpg");
+  }
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  width: 79%;
+  font-weight: 500;
+}
+
+.login__form input {
+  margin-top: 35px;
+  padding: 0;
+  padding-bottom: 7px;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 1px;
+  color: $color-grey;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $color-dark-grey;
+}
+
+.login__form a {
+  @include reset-link-style;
+  align-self: flex-end;
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 18px;
+  color: $color-grey;
+}
+
+.login__form-submit-button {
+  margin-top: 45px;
+}
+
+.login__question {
+  display: flex;
+  margin-top: 15px;
+  margin-left: -5px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-grey;
+}
+
+.login__question a {
+  @include reset-link-style;
+  margin-left: 10px;
+  color: $color-dark-grey;
+}
+
+.login__close-button {
+  position: absolute;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  top: 12px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+  z-index: 3;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &::before,
+  &::after {
+    @include pseudo-clases;
+    width: 18px;
+    height: 2px;
+    top: 14px;
+    left: 7px;
+    background-color: $color-black;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(135deg);
+  }
+}
+/*стили для FireFox*/
+@supports (-moz-appearance:meterbar) {
+  .login--popup {
+    width: 31.9vw;
+    left: 34.6vw;
+  }
+}
+/*конец стилей для FireFox*/
+
+@media (max-width: $tablet-max-width) {
+  .login {
+    width: 57.6vw;
+    margin-top: -4px;
+    margin-left: 21.2vw;
+  }
+
+  .login--popup {
+    width: 57.6vw;
+    height: 78.5vh;
+    top: 80px;
+    left: 21.2vw;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .login__background-image {
+    height: 140px;
+  }
+
+  .login__form {
+    width: 77%;
+  }
+
+  .login__question {
+    margin-left: 0;
+  }
+
+  .login__question a {
+    margin-left: 5px;
+  }
+
+  .login__close-button {
+    width: 20px;
+    height: 20px;
+    top: 13px;
+    right: 26px;
+
+    &::before,
+    &::after {
+      width: 26px;
+      height: 3px;
+      top: 16px;
+      left: 3px;
+    }
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .login {
+    width: 84.5vw;
+    height: 82.5vh;
+    margin-top: 0;
+    margin-left: 7.6vw;
+    padding-bottom: 0;
+  }
+
+  .login--popup {
+    width: 84.5vw;
+    height: 82.5vh;
+    top: 50px;
+    left: 7.8vw;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .login h2 {
+    margin-top: 121px;
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  .login__background-image {
+    height: 84px;
+  }
+
+  .login__form {
+    width: 89%;
+  }
+
+  .login__form input {
+    margin-top: 29px;
+  }
+
+  .login__form button {
+    margin-top: 36px;
+  }
+
+  .login__close-button {
+    width: 14px;
+    height: 14px;
+    right: 16px;
+
+    &::before,
+    &::after {
+      width: 16px;
+      height: 2px;
+      top: 8px;
+      left: 0;
+    }
+  }
+}

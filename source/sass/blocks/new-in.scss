@@ -1,0 +1,248 @@
+.new-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 94px;
+  margin-left: calc(50% - 4px - 42vw);
+  margin-right: calc(50% - 21px - 42vw);
+}
+
+.new-in h2 {
+  font-family: "Cormorant Garamond", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 37px;
+}
+
+.new-in > a {
+  @include reset-link-style;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  border-bottom: 1px solid $color-braun;
+}
+
+.new-in__slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  width: 100%;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.new-in__slider-list {
+  overflow: hidden;
+}
+
+.new-in__slider-track {
+  display: flex;
+  width: 100%;
+}
+
+.new-in__slider-previous-button,
+.new-in__slider-next-button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -115px;
+  width: 29px;
+  height: 29px;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  background-image: url("../img/icon-slider-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 50%;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.new-in__slider-previous-button--off,
+.new-in__slider-next-button--off {
+  opacity: 0.2;
+  pointer-events: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.2;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}
+
+.new-in__slider-previous-button {
+  left: 0;
+}
+
+.new-in__slider-next-button {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.new-in__slider-item {
+  @include reset-list-style;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  margin-left: 2.1%;
+  width: 49%;
+}
+
+.new-in__slider-item:first-child {
+  margin-left: 0;
+}
+
+.new-in__slider-controls {
+  @include reset-list-style;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.new-in__slider-number-tablet {
+  display: none;
+}
+
+.new-in__slider-number-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7px;
+  margin-left: 5px;
+  padding: 0;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  color: $color-grey;
+  cursor: pointer;
+
+  &:focus {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.new-in__slider-number-button--active {
+  color: $color-dark-grey;
+}
+
+.new-in__slider-info {
+  display: none;
+}
+
+/*стили для FireFox*/
+@supports (-moz-appearance:meterbar) {
+  .new-in {
+    margin-left: calc(50% - 10px - 42vw);
+    margin-right: calc(50% - 27px - 42vw);
+  }
+}
+/*конец стилей для FireFox*/
+
+@media (max-width: $tablet-max-width) {
+  .new-in {
+    margin-top: 46px;
+    margin-left: calc(50% - 16px - 42vw);
+    margin-right: calc(50% - 16px - 42vw);
+    width: 88.4vw;
+  }
+
+  .new-in h2 {
+    margin-bottom: 22px;
+  }
+
+  .new-in > a {
+    padding-bottom: 5px;
+  }
+
+  .new-in__slider {
+    margin-top: 50px;
+  }
+
+  .new-in__slider-previous-button,
+  .new-in__slider-next-button {
+    top: -108px;
+    width: 36px;
+    height: 36px;
+    background-position: 10% 50%;
+    background-size: 130% 100%;
+  }
+
+  .new-in__slider-item {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .new-in__slider-block {
+    width: 44.5%;
+  }
+
+  .new-in__slider-controls {
+    margin-top: 35px;
+  }
+
+  .new-in__slider-number-tablet {
+    display: flex;
+  }
+
+  .new-in__slider-number-button {
+    margin-left: 6px;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .new-in {
+    margin-top: 36px;
+    margin-left: calc(50% - 11px - 42vw);
+    margin-right: calc(50% - 11px - 42vw);
+    width: 90.4vw;
+  }
+
+  .new-in__slider {
+    margin-top: 40px;
+  }
+
+  .new-in__slider-previous-button,
+  .new-in__slider-next-button {
+    display: none;
+  }
+
+  .new-in__slider-controls {
+    display: none;
+  }
+
+  .new-in__slider-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  .new-in__slider-info span {
+    margin: 5px;
+    font-weight: 500;
+  }
+}

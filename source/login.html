@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Description" content="Our jewellerry is made of solid gold, silver or leather.  Also, some jewellery contains precious and semiprecious stones and crystals.">
+  <title>Jewellery login</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/poppinsregular-400.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/poppinspoppins-semiboldmedium-500.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/poppinsbold-700.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramond-400.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramondsemibold-600.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramondbold-700.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramonditalic-400.woff2" as="font" crossorigin="anonymous">
+</head>
+
+<body>
+  <div style="display: none">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+  <main class="page-main">
+    <h1 class="visually-hidden">Jewelry login</h1>
+    <a href="index.html" class="page-main__logo">
+      <!-- 1х: 66px -->
+      <img width="66" height="66" src="img/logo.svg" alt="Логотип Jewellery">
+    </a>
+    <section class="login login--opened">
+      <h2>Log In</h2>
+      <div class="login__background-image"></div>
+      <form class="login__form" action="https://echo.htmlacademy.ru" method="get">
+        <label class="visually-hidden" for="login-email">Your email</label>
+        <input type="email" id="login-email" name="login-email" placeholder="Your E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="" autofocus>
+
+        <label class="visually-hidden" for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password" required="">
+        <a href="#">Forgot your password?</a>
+        <button class="login__form-submit-button button" type="submit">
+          Log In
+        </button>
+      </form>
+      <div class="login__question">
+        <span>Don’t have an account?</span>
+        <a href="#">Sign up</a>
+      </div>
+      <button class="login__close-button">
+        <span class="visually-hidden">Close popup</span>
+      </button>
+    </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
