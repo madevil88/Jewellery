@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  const ESCAPE_KEY = 27;
+  const ESCAPE_KEY = 'Escape';
   const MIN_VIEWPORT_WIDTH_DESKTOP = 1024;
   const SLIDE_MARGIN = 1.0213;
   let intViewportWidth = window.innerWidth;
@@ -14,8 +14,6 @@
   const siteSearch = pageBody.querySelector('.page-header__site-search');
   const sliderItems = Array.from(pageBody.querySelectorAll('.new-in__slider-item'));
   const sliderNumberButtons = Array.from(pageBody.querySelectorAll('.new-in__slider-number-button'));
-  const sliderPreviousButton = pageBody.querySelector('.new-in__slider-previous-button');
-  const sliderNextButton = pageBody.querySelector('.new-in__slider-next-button');
   const faqListItems = pageBody.querySelectorAll('.faq__list-item');
   const faqListItemsButtons = pageBody.querySelectorAll('.faq__list-item-toggle');
   const formItems = pageBody.querySelectorAll('.catalog-filter__form-item');
@@ -32,8 +30,6 @@
   const catalogFilterCloseButton = pageBody.querySelector('.catalog-filter__close-form-button');
   const sliderCurrentItems = [];
   let sliderCurrentControls = [];
-  let numberCurrentSlide = 0;
-  let numberCurrentControl = 0;
 
   const getCurrentSlider = (items, controls) => {
     let quantitySliderControl = sliderNumberButtons.length;
@@ -86,8 +82,8 @@
   let swipeStartTime = 0;
   let swipeEndTime = 0;
 
-  const getEvent = function() {
-    return (event.type.search('touch') !== -1) ? event.touches[0] : event;
+  const getEvent = function(evt) {
+    return (evt.type.search('touch') !== -1) ? evt.touches[0] : evt;
   };
 
   const slide = function() {
@@ -100,8 +96,8 @@
     next.classList.toggle('new-in__slider-next-button--off', slideIndex === (sliderCurrentItems.length - 1));
   };
 
-  const swipeStart = function() {
-    let evt = getEvent();
+  const swipeStart = function(evt) {
+    let touchEvt = getEvent(evt);
 
     if (allowSwipe) {
 
@@ -112,8 +108,8 @@
       nextTrf = (slideIndex + 1) * -slideWidth;
       prevTrf = (slideIndex - 1) * -slideWidth;
 
-      posInit = posX1 = evt.clientX;
-      posY1 = evt.clientY;
+      posInit = posX1 = touchEvt.clientX;
+      posY1 = touchEvt.clientY;
 
       sliderTrack.style.transition = '';
 
@@ -127,17 +123,17 @@
     }
   };
 
-  const swipeAction = function() {
+  const swipeAction = function(evt) {
 
-    let evt = getEvent(),
+    let touchEvt = getEvent(evt),
     style = sliderTrack.style.transform,
     transform = +style.match(trfRegExp)[0];
 
-    posX2 = posX1 - evt.clientX;
-    posX1 = evt.clientX;
+    posX2 = posX1 - touchEvt.clientX;
+    posX1 = touchEvt.clientX;
 
-    posY2 = posY1 - evt.clientY;
-    posY1 = evt.clientY;
+    posY2 = posY1 - touchEvt.clientY;
+    posY1 = touchEvt.clientY;
 
     if (!isSwipe && !isScroll) {
       let posY = Math.abs(posY2);
@@ -242,8 +238,8 @@
       slider.addEventListener('mousedown', swipeStart);
     }
 
-    arrows.addEventListener('click', function() {
-      let target = event.target;
+    arrows.addEventListener('click', function(evt) {
+      let target = evt.target;
       if (target.classList.contains('new-in__slider-next-button') && slideIndex < sliderCurrentItems.length - 1) {
         sliderCurrentControls[slideIndex].classList.remove('new-in__slider-number-button--active');
         slideIndex++;
@@ -343,14 +339,14 @@
   };
 
   const openPopup = (evt) => {
-    const isLoginPopup = evt.target == loginButton.querySelector('span');
+    const isLoginPopup = evt.target === loginButton.querySelector('span');
     pageBody.classList.add('body-popup-background');
     pageBody.style.overflow = 'hidden';
     if (isLoginPopup) {
       loginPopup.classList.add('login--opened');
       formLoginFieldEmail.focus();
     }
-    if (evt.target == catalogFilterButton) {
+    if (evt.target === catalogFilterButton) {
       catalogFilterPopup.classList.add('catalog-filter__form--opened');
     }
     setTimeout(() => document.addEventListener('click', outsideClickListener), 1);
@@ -401,7 +397,7 @@
   }) : '';
 
   window.addEventListener('keydown', (evt) => {
-    if (evt.keyCode === ESCAPE_KEY) {
+    if (evt.key === ESCAPE_KEY) {
       closePopup();
     }
   });
