@@ -126,6 +126,9 @@
           <span class="visually-hidden">Close</span>
         </button>
         <article class="catalog-filter__form-item catalog-filter__form-item--nojs">
+          <button class="catalog-filter__form-item-toggle" type="button">
+            <span class="visually-hidden">Раскрыть раздел</span>
+          </button>
           <h3>Product</h3>
           <ul class="catalog-filter__form-item-list">
             <li>
@@ -145,11 +148,11 @@
               <label for="earrings">Earrings</label>
             </li>
           </ul>
+        </article>
+        <article class="catalog-filter__form-item catalog-filter__form-item--nojs">
           <button class="catalog-filter__form-item-toggle" type="button">
             <span class="visually-hidden">Раскрыть раздел</span>
           </button>
-        </article>
-        <article class="catalog-filter__form-item catalog-filter__form-item--nojs">
           <h3>Material</h3>
           <ul class="catalog-filter__form-item-list">
             <li>
@@ -161,11 +164,11 @@
               <label for="silver">Silver</label>
             </li>
           </ul>
+        </article>
+        <article class="catalog-filter__form-item catalog-filter__form-item--nojs">
           <button class="catalog-filter__form-item-toggle" type="button">
             <span class="visually-hidden">Раскрыть раздел</span>
           </button>
-        </article>
-        <article class="catalog-filter__form-item catalog-filter__form-item--nojs">
           <h3>Collection</h3>
           <ul class="catalog-filter__form-item-list">
             <li>
@@ -177,11 +180,11 @@
               <label for="dreams">Dreams</label>
             </li>
           </ul>
+        </article>
+        <article class="catalog-filter__form-item catalog-filter__form-item--nojs">
           <button class="catalog-filter__form-item-toggle" type="button">
             <span class="visually-hidden">Раскрыть раздел</span>
           </button>
-        </article>
-        <article class="catalog-filter__form-item catalog-filter__form-item--nojs">
           <h3>Price</h3>
           <div data-name="form-range" class="catalog-filter__form-item-list">
             <button type="button">
@@ -195,9 +198,6 @@
               <span>$155</span>
             </div>
           </div>
-          <button class="catalog-filter__form-item-toggle" type="button">
-            <span class="visually-hidden">Раскрыть раздел</span>
-          </button>
         </article>
         <button class="catalog-filter__form-submit-button button" type="submit">
           Apply
@@ -411,7 +411,7 @@
       <input type="email" id="login-email" name="login-email" placeholder="Your E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="" autofocus="">
 
       <label class="visually-hidden" for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Password">
+      <input type="password" id="password" name="password" placeholder="Password" required="">
       <a href="#">Forgot your password?</a>
       <button class="login__form-submit-button button" type="submit">
         Log In

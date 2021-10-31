@@ -24,7 +24,7 @@
   @include reset-list-style;
   display: none;
   margin-top: 19px;
-  margin-left: 34px;
+  margin-left: 10px;
   margin-bottom: 25px;
 }
 
@@ -34,14 +34,16 @@
 
 .catalog-filter__form label {
   position: relative;
+  padding-left: 24px;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
+  cursor: pointer;
 
   &::before {
     @include pseudo-clases;
     top: 3px;
-    left: -24px;
+    left: 0;
     width: 14px;
     height: 15px;
     border: 1px solid $color-braun;
@@ -186,9 +188,10 @@ div[data-name="form-range"] span {
     position: fixed;
     flex-direction: column;
     width: 57.7vw;
-    height: 89.5vh;
+    max-height: 930px;
     top: 27px;
     left: 21.1vw;
+    bottom: 0;
     background-color: $color-white;
     overflow-y: scroll;
     z-index: 2;
@@ -196,7 +199,6 @@ div[data-name="form-range"] span {
 
   .catalog-filter__form.catalog-filter__form--opened {
     display: flex;
-    overflow: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
@@ -264,7 +266,7 @@ div[data-name="form-range"] span {
 
   .catalog-filter__form .catalog-filter__form-item-list {
     margin-top: 22px;
-    margin-left: 39px;
+    margin-left: 10px;
     margin-bottom: 0;
   }
 
@@ -277,12 +279,13 @@ div[data-name="form-range"] span {
   }
 
   .catalog-filter__form label {
+    padding-left: 29px;
     font-size: 16px;
     line-height: 21px;
 
     &::before {
       top: 2px;
-      left: -30px;
+      left: 0;
       width: 18px;
       height: 18px;
     }
@@ -340,8 +343,8 @@ div[data-name="form-range"] span {
 @media (max-width: $mobile-max-width) {
   .catalog-filter__form {
     width: 84.3vw;
-    height: 84.5vh;
-    top: 78px;
+    max-height: 790px;
+    top: 79px;
     left: 8vw;
   }
 

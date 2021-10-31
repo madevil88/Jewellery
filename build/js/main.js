@@ -11,6 +11,7 @@
   const navMain = pageBody.querySelector('.page-header__main-nav');
   const navToggle = pageBody.querySelector('.page-header__main-nav-toggle');
   const menuItems = pageBody.querySelectorAll('.page-header__site-menu-item');
+  const menuLoginButton = pageBody.querySelector('.page-header__site-menu-item-tablet-login');
   const siteSearch = pageBody.querySelector('.page-header__site-search');
   const sliderItems = Array.from(pageBody.querySelectorAll('.new-in__slider-item'));
   const sliderNumberButtons = Array.from(pageBody.querySelectorAll('.new-in__slider-number-button'));
@@ -305,7 +306,7 @@
   });
 
   const showMenu = () => {
-    if (navMain.classList.contains('page-header__main-nav--closed')) {
+    if (navMain.classList.contains('page-header__main-nav--closed') && intViewportWidth < MIN_VIEWPORT_WIDTH_DESKTOP) {
       navMain.classList.remove('page-header__main-nav--closed');
       siteSearch.classList.remove('page-header__site-search--closed');
       pageHeader.classList.add('page-header--menu-style');
@@ -321,6 +322,7 @@
   };
 
   if (navMain && navToggle) {
+    siteSearch.classList.remove('page-header__site-search--nojs');
     navMain.classList.remove('page-header__main-nav--nojs')
     navMain.classList.add('page-header__main-nav--closed');
     navToggle.addEventListener('click', showMenu);
@@ -339,17 +341,20 @@
   };
 
   const openPopup = (evt) => {
+    const isMenuLoginPopup = evt.target === menuLoginButton.querySelector('a');
     const isLoginPopup = evt.target === loginButton.querySelector('span');
     pageBody.classList.add('body-popup-background');
-    pageBody.style.overflow = 'hidden';
-    if (isLoginPopup) {
+    if (isLoginPopup || isMenuLoginPopup) {
       loginPopup.classList.add('login--opened');
       formLoginFieldEmail.focus();
     }
     if (evt.target === catalogFilterButton) {
       catalogFilterPopup.classList.add('catalog-filter__form--opened');
     }
-    setTimeout(() => document.addEventListener('click', outsideClickListener), 1);
+    setTimeout(() => {
+      document.addEventListener('click', outsideClickListener);
+      pageBody.style.overflow = 'hidden';
+    }, 1);
   };
 
   const closePopup = () => {
@@ -376,6 +381,12 @@
 
   formLoginSubmitButton ? formLoginSubmitButton.addEventListener('click', (evt) => {
     setLocalStorage();
+  }) : '';
+
+  menuLoginButton ? menuLoginButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    openPopup(evt);
+    showMenu();
   }) : '';
 
   loginButton ? loginButton.addEventListener('click', (evt) => {

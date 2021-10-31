@@ -17,12 +17,12 @@
 </head>
 
 <body>
-  <div style="display: none">
+  <div role="img" tabindex="-1" aria-hidden="true" style="display: none">
     <include src="build/img/sprite.svg"></include>
   </div>
   <header class="page-header">
     <div class="page-header__wrapper">
-      <form class="page-header__site-search page-header__site-search--closed" action="https://echo.htmlacademy.ru" method="get">
+      <form class="page-header__site-search page-header__site-search--closed page-header__site-search--nojs" action="https://echo.htmlacademy.ru" method="get">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M11.0482 10.0737L14 13.0248L13.0248 14L10.0737 11.0482C8.9757 11.9285 7.60993 12.4072 6.20262 12.4052C2.77877 12.4052 0 9.62646 0 6.20262C0 2.77877 2.77877 0 6.20262 0C9.62646 0 12.4052 2.77877 12.4052 6.20262C12.4072 7.60993 11.9285 8.9757 11.0482 10.0737ZM9.66575 9.56237C10.5404 8.66291 11.0289 7.45722 11.0269 6.20262C11.0269 3.53687 8.86768 1.37836 6.20262 1.37836C3.53687 1.37836 1.37836 3.53687 1.37836 6.20262C1.37836 8.86768 3.53687 11.0269 6.20262 11.0269C7.45722 11.0289 8.66291 10.5404 9.56237 9.66575L9.66575 9.56237Z" fill="black" stroke="#1D1613" stroke-width="1"/>
         </svg>
@@ -89,7 +89,7 @@
         <span class="visually-hidden">Меню сайта</span>
       </button>
     </nav>
-    <div class="page-header__slogan">
+    <div role="img" class="page-header__slogan">
       <span>perfection</span>
       <span>made to be yours</span>
     </div>
@@ -103,8 +103,8 @@
         <div class="new-in__slider-list">
           <div class="new-in__slider-track">
             <ul class="new-in__slider-item new-in__slider-item--active">
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Necklace with amethyst</h4>
+              <li class="new-in__slider-block">
+                <h3>Necklace with amethyst</h3>
                 <span>$ 145</span>
                 <picture>
                   <source type="image/webp" srcset="img/purple-gemstone-necklace-slider@1x.webp 1x, img/purple-gemstone-necklace-slider@2x.webp 2x">
@@ -112,8 +112,8 @@
                   <img width="270" height="284" src="img/purple-gemstone-necklace-slider@1x.jpg" srcset="img/purple-gemstone-necklace-slider@2x.jpg 2x" alt="Necklace with amethyst">
                 </picture>
               </li>
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Layered сhoker</h4>
+              <li class="new-in__slider-block">
+                <h3>Layered сhoker</h3>
                 <span>$ 115</span>
                 <picture>
                   <source type="image/webp" srcset="img/layered-сhoker-slider@1x.webp 1x, img/layered-сhoker-slider@2x.webp 2x">
@@ -123,8 +123,8 @@
               </li>
             </ul>
             <ul class="new-in__slider-item">
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Gold chain</h4>
+              <li class="new-in__slider-block">
+                <h3>Gold chain</h3>
                 <span>$ 215</span>
                 <picture>
                   <source type="image/webp" srcset="img/gold-chain-slider@1x.webp 1x, img/gold-chain-slider@2x.webp 2x">
@@ -132,8 +132,8 @@
                   <img width="270" height="284" src="img/gold-chain-slider@1x.jpg" srcset="img/gold-chain-slider@2x.jpg 2x" alt="Gold chain">
                 </picture>
               </li>
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Galaxy earrings</h4>
+              <li class="new-in__slider-block">
+                <h3>Galaxy earrings</h3>
                 <span>$ 95</span>
                 <picture>
                   <source type="image/webp" srcset="img/galaxy-earrings-slider@1x.webp 1x, img/galaxy-earrings-slider@2x.webp 2x">
@@ -143,8 +143,8 @@
               </li>
             </ul>
             <ul class="new-in__slider-item">
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Double pearl earrings</h4>
+              <li class="new-in__slider-block">
+                <h3>Double pearl earrings</h3>
                 <span>$ 115</span>
                 <picture>
                   <source type="image/webp" srcset="img/double-pearl-earrings-slider@1x.webp 1x, img/double-pearl-earrings-slider@2x.webp 2x">
@@ -152,8 +152,8 @@
                   <img width="270" height="284" src="img/double-pearl-earrings-slider@1x.jpg" srcset="img/double-pearl-earrings-slider@2x.jpg 2x" alt="Double pearl earrings">
                 </picture>
               </li>
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Choker with gold bead</h4>
+              <li class="new-in__slider-block">
+                <h3>Choker with gold bead</h3>
                 <span>$ 55</span>
                 <picture>
                   <source type="image/webp" srcset="img/black-choker-gold-bead-slider@1x.webp 1x, img/black-choker-gold-bead-slider@2x.webp 2x">
@@ -163,8 +163,8 @@
               </li>
             </ul>
             <ul class="new-in__slider-item">
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Gold layered necklace</h4>
+              <li class="new-in__slider-block">
+                <h3>Gold layered necklace</h3>
                 <span>$ 155</span>
                 <picture>
                   <source type="image/webp" srcset="img/gold-layered-necklace-slider@1x.webp 1x, img/gold-layered-necklace-slider@2x.webp 2x">
@@ -172,8 +172,8 @@
                   <img width="270" height="284" src="img/gold-layered-necklace-slider@1x.jpg" srcset="img/gold-layered-necklace-slider@2x.jpg 2x" alt="Gold layered necklace">
                 </picture>
               </li>
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Blue gemstone pendant</h4>
+              <li class="new-in__slider-block">
+                <h3>Blue gemstone pendant</h3>
                 <span>$ 105</span>
                 <picture>
                   <source type="image/webp" srcset="img/blue-gemstone-pendant-slider@1x.webp 1x, img/blue-gemstone-pendant-slider@2x.webp 2x">
@@ -183,8 +183,8 @@
               </li>
             </ul>
             <ul class="new-in__slider-item">
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Boho earrings</h4>
+              <li class="new-in__slider-block">
+                <h3>Boho earrings</h3>
                 <span>$ 75</span>
                 <picture>
                   <source type="image/webp" srcset="img/boho-earrings-slider@1x.webp 1x, img/boho-earrings-slider@2x.webp 2x">
@@ -192,8 +192,8 @@
                   <img width="270" height="284" src="img/boho-earrings-slider@1x.jpg" srcset="img/boho-earrings-slider@2x.jpg 2x" alt="Boho earrings">
                 </picture>
               </li>
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Gold bird necklace</h4>
+              <li class="new-in__slider-block">
+                <h3>Gold bird necklace</h3>
                 <span>$ 135</span>
                 <picture>
                   <source type="image/webp" srcset="img/bird-necklace-slider@1x.webp 1x, img/bird-necklace-slider@2x.webp 2x">
@@ -203,8 +203,8 @@
               </li>
             </ul>
             <ul class="new-in__slider-item">
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Black leather choker</h4>
+              <li class="new-in__slider-block">
+                <h3>Black leather choker</h3>
                 <span>$ 85</span>
                 <picture>
                   <source type="image/webp" srcset="img/black-leather-choker-necklace-slider@1x.webp 1x, img/black-leather-choker-necklace-slider@2x.webp 2x">
@@ -212,8 +212,8 @@
                   <img width="270" height="284" src="img/black-leather-choker-necklace-slider@1x.jpg" srcset="img/black-leather-choker-necklace-slider@2x.jpg 2x" alt="Black leather choker">
                 </picture>
               </li>
-              <li class="new-in__slider-block catalog__list-item catalog__list-item--slider">
-                <h4>Elephant earrings</h4>
+              <li class="new-in__slider-block">
+                <h3>Elephant earrings</h3>
                 <span>$ 95</span>
                 <picture>
                   <source type="image/webp" srcset="img/elephant-earrings-slider@1x.webp 1x, img/elephant-earrings-slider@2x.webp 2x">
@@ -225,8 +225,12 @@
           </div>
         </div>
         <div class="new-in__slider-arrows">
-          <button type="button" class="new-in__slider-previous-button"></button>
-          <button type="button" class="new-in__slider-next-button"></button>
+          <button class="new-in__slider-previous-button" type="button">
+            <span class="visually-hidden">Slider previous button</span>
+          </button>
+          <button class="new-in__slider-next-button" type="button">
+            <span class="visually-hidden">Slider next button</span>
+          </button>
         </div>
         <ul class="new-in__slider-controls">
           <li class="new-in__slider-number">

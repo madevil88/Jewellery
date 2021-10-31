@@ -2,8 +2,8 @@
   grid-row: 3 / 4;
   display: flex;
   padding-top: 61px;
-  padding-left: calc(50% - 4px - 42vw);
-  padding-right: calc(50% - 21px - 42vw);
+  padding-left: calc(50% - 12px - 42vw);
+  padding-right: calc(50% - 12px - 42vw);
   padding-bottom: 92px;
   background-color: $color-black;
   color: $color-white;
@@ -44,9 +44,13 @@
   font-size: 14px;
   line-height: 21px;
   letter-spacing: 0.8px;
-  color: $color-grey;
+  color: $color-white;
   background-color: transparent;
   border: none;
+}
+
+.page-footer__news-subscription-form input::placeholder {
+  color: $color-grey;
 }
 
 .page-footer__news-subscription-form-button {
